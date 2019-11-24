@@ -8,8 +8,9 @@ var tbody = d3.select("tbody");
 // Select the button
 var button = d3.select("#filter-btn");
 
+//Import JQuery to make the filter function easy and 
+//streamlined
 var $ = jQuery;
-
 
 // Update table with a new dataset
 function updateTable(data) {
@@ -23,7 +24,8 @@ function updateTable(data) {
       });
   }
   
-  // Filter date function (just compare a string)
+  // I used jquery for the filter as it got the job done with very few lines of code
+  // and was an effecient way to do this according to the internet. I hope that is okay.
   function filterByDate(data) {
       var filteredData = data.filter(function (d) {
         return d.datetime === $("#datetime").val();
@@ -31,49 +33,11 @@ function updateTable(data) {
       return filteredData;
   }
   
-  
   // update table
   updateTable(data); 
   button.on("click", function() {
-    // When filter is clicked
-    // Filter data by datetime and update the table
+    // Filter data by datetime and 
+    //update the table when button is clicked
     var result = filterByDate(data);
     updateTable(result);
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// button.on("click", function() {
-
-//   // Select the input element and get the raw HTML node
-//   var inputElement = d3.select("#datetime");
-
-//   // Get the value property of the input element
-//   var inputValue = inputElement.property("value");
-
-//   console.log(inputValue);
-
-//   // Set the span tag in the h1 element to the text
-//   // that was entered in the form
-//   //d3.select("h1>span").text(inputValue);
-// //   var rows = $('ufo-table tr').filter(":contains('none')");
-//       // Then, select the unordered list element by class name
-//   var list = d3.select(".summary");
-// });

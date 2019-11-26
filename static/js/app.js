@@ -25,7 +25,6 @@ function updateTable(data) {
   }
   
   // I used jquery for the filter as it got the job done with very few lines of code
-  // and was an effecient way to do this according to the internet. I hope that is okay.
   function filterByDate(data) {
       var filteredData = data.filter(function (d) {
         return d.datetime === $("#datetime").val();

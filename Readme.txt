@@ -1,0 +1,1 @@
+Here I use Javascript to build a webpage that displays ufo sightings. You can filter the table by date by inputing a date into the search bar on the right hand side of the screen.

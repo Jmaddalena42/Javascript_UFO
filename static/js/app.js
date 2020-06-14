@@ -1,15 +1,13 @@
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
 // Select the button
 var button = d3.select("#filter-btn");
 
-//Import JQuery to make the filter function easy and 
-//streamlined
+//Import JQuery to make the filter function easy
 var $ = jQuery;
 
 // Update table with a new dataset
@@ -33,10 +31,10 @@ function updateTable(data) {
   }
   
   // update table
-  updateTable(data); 
-  button.on("click", function() {
+  updateTable(data);
+  $('#datetime').on('keyup', function () {
     // Filter data by datetime and 
-    //update the table when button is clicked
+    //update the table as new inputs are entered.
     var result = filterByDate(data);
     updateTable(result);
-  });
+  }); 
